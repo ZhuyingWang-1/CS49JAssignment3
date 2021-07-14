@@ -15,9 +15,7 @@ public class MonthlyAppointment extends Appointment{
         /**
          * check if the input is between the start and end date (inclusive) AND the day of the input date is the same as the day of the start date of the appointment
          */
-        if(date.isAfter(getStartDate())&&date.isBefore(getEndDate())&&date.getDayOfMonth()==getStartDate().getDayOfMonth()){
-            return true;
-        }
-        else return false;
+        return super.isBetween(date)&&date.getDayOfMonth()==getStartDate().getDayOfMonth();
+
     }
 }

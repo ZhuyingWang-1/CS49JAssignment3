@@ -16,9 +16,7 @@ public class DailyAppointment extends Appointment{
         /**
          * check if the input is between the start and end date (inclusive)
          */
-        if(date.isAfter(getStartDate())&&date.isBefore(getEndDate())){
-            return true;
-        }
-        else return false;
+        return super.isBetween(date);
+
     }
 }

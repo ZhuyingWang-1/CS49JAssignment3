@@ -6,7 +6,7 @@ import java.time.LocalDate;
  * this is the super class. A appointment class will have description, startDate,endDate
  * @author  zhuying
  */
-public class Appointment implements Comparable<Appointment>{
+public abstract class Appointment implements Comparable<Appointment>{
     private String description;
     private LocalDate startDate;
     private LocalDate endDate;
@@ -29,9 +29,16 @@ public class Appointment implements Comparable<Appointment>{
         if(!this.startDate.equals(o.startDate)){
             return this.startDate.compareTo(o.startDate);
         }
-        else {
+        else if(!this.endDate.equals(o.endDate)) {
            return this.endDate.compareTo(o.endDate);
         }
+        else {
+            return this.description.compareTo(o.description);
+        }
+    }
+
+    public boolean isBetween(LocalDate date){
+        return !date.isBefore(getStartDate())&& !date.isAfter(getEndDate());
     }
 
     @Override
@@ -43,9 +50,7 @@ public class Appointment implements Comparable<Appointment>{
                 '}';
     }
 
-    public boolean occursOn(LocalDate date){
-        return false;
-    }
+    public abstract boolean occursOn(LocalDate date);
 
     public String getDescription() {
         /**
