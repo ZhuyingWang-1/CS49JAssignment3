@@ -46,7 +46,7 @@ public class Main {
         Arrays.sort(arr);
 
         //for part 4 -sorting with Comparator
-        Arrays.sort(arr,new DesComparator());
+      //  Arrays.sort(arr,new DesComparator());
 
         //print out arr
         for(Appointment a:arr) {

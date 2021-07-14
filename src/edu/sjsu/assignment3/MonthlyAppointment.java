@@ -11,7 +11,7 @@ public class MonthlyAppointment extends Appointment{
     }
 
     @Override
-    boolean occursOn(LocalDate date){
+    public boolean occursOn(LocalDate date){
         /**
          * check if the input is between the start and end date (inclusive) AND the day of the input date is the same as the day of the start date of the appointment
          */

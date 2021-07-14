@@ -43,7 +43,7 @@ public class Appointment implements Comparable<Appointment>{
                 '}';
     }
 
-    boolean occursOn(LocalDate date){
+    public boolean occursOn(LocalDate date){
         return false;
     }
 

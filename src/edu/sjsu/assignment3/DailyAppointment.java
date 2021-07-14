@@ -12,7 +12,7 @@ public class DailyAppointment extends Appointment{
     }
 
     @Override
-    boolean occursOn(LocalDate date){
+    public boolean occursOn(LocalDate date){
         /**
          * check if the input is between the start and end date (inclusive)
          */
